@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="img/dakota.jpg">
 
     <title>Dakota's Weather App</title>
 
@@ -31,10 +30,47 @@
 
 <body ng-app="homePage" ng-controller="homeController">
 
+  <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
-  <header>
-      <h1 class="name">Simple Weather App</h1>
-  </header>
+      <!-- Navigation -->
+      <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+          <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand" href="#page-top">Dakota Castleberg</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="hidden">
+                          <a href="#page-top"></a>
+                      </li>
+                      <li class="page-scroll">
+                          <a href="#about">About</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a href="#contact">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+      </nav>
+
+
+
+<div id="body1" class="col-md-12">
+  <h2>Weather Charting</h2>
+  <div class="col-md-6">
+    <p>Making a call to the OpenWeatherSource API</p>
+    <p>This site created using AngularJS and angular-chart.js</p>
+</div>
+</div>
 
 
 

@@ -29,6 +29,7 @@
     "url": "https://github.com/DaCastle/weatherApp.git"
   },
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "gulp-install": "^1.1.0",
     "jasmine": "^2.6.0",
     "selenium-webdriver": "^3.4.0"

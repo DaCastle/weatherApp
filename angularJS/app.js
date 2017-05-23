@@ -13,7 +13,7 @@
         function ($scope, weatherService) {
 
           $scope.loading = true;
-          $scope.barOrLine = "line";
+          $scope.barOrLine = "bar";
           $scope.results = {};
           $scope.forecast = {};
           $scope.data = [];

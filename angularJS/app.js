@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var homePage = angular.module('homePage', []);
+    var homePage = angular.module('homePage', ['chart.js']);
 
     // angular.module('homePage').directive('myHeader', function() {
     //   return {
@@ -12,13 +12,45 @@
     homePage.controller('homeController', ['$scope', 'weatherService',
         function ($scope, weatherService) {
 
-          $scope.keyWords = "professional problem solver";
+          $scope.loading = true;
           $scope.forecast = {};
+          $scope.data = [];
+          $scope.labels = [];
+          $scope.temperatureSeries = ['low temp', 'high temp'];
+          $scope.colors = ['#00ADF9', '#8c051c'];
 
           weatherService.getForecast().then(function (data) {
-            $scope.forecast = data;
-          })
 
+            $scope.forecast = data.query.results.channel.item.forecast;
+            setLabels();
+            setData();
+            $scope.loading = false;
+          });
+
+
+          function setLabels() {
+            for (let i = 0; i < $scope.forecast.length; i++) {
+              $scope.labels.push($scope.forecast[i].day);
+            }
+          }
+
+          function setData() {
+            let low = [];
+            let high = [];
+
+            for (let i = 0; i < $scope.forecast.length; i++) {
+              low.push($scope.forecast[i].low);
+              high.push($scope.forecast[i].high);
+            }
+            $scope.data.push(low);
+            $scope.data.push(high);
+          }
+
+          $scope.onClick = function (points, evt) {
+            console.log(points, evt);
+          };
 
         }]);
+
+
 })();

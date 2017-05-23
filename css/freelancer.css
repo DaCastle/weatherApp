@@ -12,7 +12,6 @@ body {
 }
 p {
   font-size: 20px;
-  color: white;
 }
 p.small {
   font-size: 16px;
@@ -33,7 +32,6 @@ h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*text-transform: uppercase;*/
   font-weight: 700;
-  color: white;
 }
 hr.star-light,
 hr.star-primary {
@@ -526,6 +524,32 @@ div#maincontent {
 
 #body1 {
   margin-top: 150px;
-  background-color: rgba(255, 255, 255, .2) ;
+  background-color: rgba(255, 255, 255, 1) ;
   border-radius: 10px;
+  height: 600px;
+}
+
+.glyphicon-spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
 }

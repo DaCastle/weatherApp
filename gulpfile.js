@@ -88,8 +88,8 @@ gulp.task('browserSync', function() {
 gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
+    gulp.watch('angularJS/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
     gulp.watch(['*.html', './angularJS/directives/*.html'], browserSync.reload);
-    gulp.watch('js/**/*.js', browserSync.reload);
+    gulp.watch('angularJS/*.js', browserSync.reload);
 });

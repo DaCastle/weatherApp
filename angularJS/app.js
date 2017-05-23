@@ -13,14 +13,17 @@
         function ($scope, weatherService) {
 
           $scope.loading = true;
+          $scope.barOrLine = "line";
+          $scope.results = {};
           $scope.forecast = {};
           $scope.data = [];
           $scope.labels = [];
-          $scope.temperatureSeries = ['low temp', 'high temp'];
+          $scope.temperatureSeries = ['Low of', 'High of'];
           $scope.colors = ['#00ADF9', '#8c051c'];
 
           weatherService.getForecast().then(function (data) {
 
+            $scope.results = data.query.results.channel;
             $scope.forecast = data.query.results.channel.item.forecast;
             setLabels();
             setData();
@@ -46,9 +49,9 @@
             $scope.data.push(high);
           }
 
-          $scope.onClick = function (points, evt) {
-            console.log(points, evt);
-          };
+          $scope.showBarOrLine = function() {
+            $scope.barOrLine === "line" ? $scope.barOrLine = "bar" : $scope.barOrLine = "line";
+          }
 
         }]);
 

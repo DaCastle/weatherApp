@@ -72,13 +72,19 @@
 
   <div class="col-md-6">
 
-    <h2>10 Day Weather Forecast</h2>
+    <h3>10 Day Forecast - {{results.description}}</h3>
 
-    <canvas ng-show="!($scope.loading)" id="line" class="chart chart-line" chart-data="data"
+    <canvas ng-show="!($scope.loading) && barOrLine == 'line'" id="line" class="chart chart-line" chart-data="data"
+      chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
+    </canvas>
+
+    <canvas ng-show="!($scope.loading) && barOrLine == 'bar'" id="line" class="chart chart-bar" chart-data="data"
       chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
     </canvas>
 
     <span ng-show="$scope.loading" class="glyphicon glyphicon-refresh glyphicon-spin"> Fetching Weather Data</span>
+
+    <button ng-show="!($scope.loading)" type="button" class="btn btn-primary" ng-click="showBarOrLine()">Click for {{barOrLine}} graph</button>
 
   </div>
 

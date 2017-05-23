@@ -74,11 +74,11 @@
 
     <h3>10 Day Forecast - {{results.description}}</h3>
 
-    <canvas ng-show="!($scope.loading) && barOrLine == 'line'" id="line" class="chart chart-line" chart-data="data"
+    <canvas ng-show="!($scope.loading) && barOrLine == 'bar'" id="line" class="chart chart-line" chart-data="data"
       chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
     </canvas>
 
-    <canvas ng-show="!($scope.loading) && barOrLine == 'bar'" id="line" class="chart chart-bar" chart-data="data"
+    <canvas ng-show="!($scope.loading) && barOrLine == 'line'" id="line" class="chart chart-bar" chart-data="data"
       chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
     </canvas>
 

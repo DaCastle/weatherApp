@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Description</th>
+      <th>Low</th>
+      <th>High</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="day in forecast">
+      <td>{{day.day}} - {{day.date}}</td>
+      <td>{{day.text}}</td>
+      <td>{{day.low}}</td>
+      <td>{{day.high}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<div>
+
+  <h3>10 Day Forecast - {{results.description}}</h3>
+
+  <canvas id="line" ng-show="!($scope.loading) && showGraphType == 'bar'" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
+  </canvas>
+
+  <canvas id="bar" ng-show="!($scope.loading) && showGraphType == 'radar'" class="chart chart-bar" chart-data="data"
+    chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
+  </canvas>
+
+  <canvas  id="radar" ng-show="!($scope.loading) && showGraphType == 'line'" class="chart chart-radar"
+    chart-data="data" chart-options="options" chart-labels="labels" chart-colors="colors">
+  </canvas>
+
+  <span ng-show="$scope.loading" class="glyphicon glyphicon-refresh glyphicon-spin"> Fetching Weather Data</span>
+
+  <button ng-show="!($scope.loading)" type="button" class="btn btn-primary" ng-click="showGraph()">Click for {{showGraphType}} graph</button>
+
+</div>

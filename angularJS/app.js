@@ -3,11 +3,27 @@
 
     var homePage = angular.module('homePage', ['chart.js']);
 
-    // angular.module('homePage').directive('myHeader', function() {
-    //   return {
-    //     templateUrl: 'angularJS/directives/header.html'
-    //   };
-    // });
+    angular.module('homePage').directive('forecastTable', function() {
+      return {
+        templateUrl: 'angularJS/directives/forecastTable.html'
+      };
+    });
+
+    angular.module('homePage').directive('myNavigation', function() {
+      return {
+        templateUrl: 'angularJS/directives/myNavigation.html'
+      };
+    });
+
+    angular.module('homePage').directive('forecastCharts', function() {
+      return {
+        templateUrl: 'angularJS/directives/forecastCharts.html'
+      };
+    });
+
+
+
+
 
     homePage.controller('homeController', ['$scope', 'weatherService',
         function ($scope, weatherService) {

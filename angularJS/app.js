@@ -13,7 +13,7 @@
         function ($scope, weatherService) {
 
           $scope.loading = true;
-          $scope.barOrLine = "bar";
+          $scope.showGraphType = "bar";
           $scope.results = {};
           $scope.forecast = {};
           $scope.data = [];
@@ -49,8 +49,16 @@
             $scope.data.push(high);
           }
 
-          $scope.showBarOrLine = function() {
-            $scope.barOrLine === "line" ? $scope.barOrLine = "bar" : $scope.barOrLine = "line";
+          $scope.showGraph = function() {
+            if ($scope.showGraphType == 'bar') {
+              $scope.showGraphType = 'radar';
+            }
+            else if ($scope.showGraphType == 'radar') {
+              $scope.showGraphType = 'line';
+            }
+            else {
+              $scope.showGraphType = 'bar';
+            }
           }
 
         }]);

@@ -64,29 +64,50 @@
 
 
 
+
+
+
 <div id="body1" class="col-md-12">
+
   <h2>Weather Charting</h2>
   <div class="col-md-6">
     <p>AngularJS, Bootstrap, angular-chart.js</p>
+    <p>
+      Source code on my <a target="_blank" href="https://github.com/DaCastle/weatherApp">Github</a>
+    </p>
+
   </div>
+
+
+
+
+
 
   <div class="col-md-6">
 
     <h3>10 Day Forecast - {{results.description}}</h3>
 
-    <canvas ng-show="!($scope.loading) && barOrLine == 'bar'" id="line" class="chart chart-line" chart-data="data"
+    <canvas id="line" ng-show="!($scope.loading) && showGraphType == 'bar'" class="chart chart-line" chart-data="data"
       chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
     </canvas>
 
-    <canvas ng-show="!($scope.loading) && barOrLine == 'line'" id="line" class="chart chart-bar" chart-data="data"
+    <canvas id="bar" ng-show="!($scope.loading) && showGraphType == 'radar'" class="chart chart-bar" chart-data="data"
       chart-labels="labels" chart-series="temperatureSeries" chart-colors="colors">
+    </canvas>
+
+    <canvas  id="radar" ng-show="!($scope.loading) && showGraphType == 'line'" class="chart chart-radar"
+      chart-data="data" chart-options="options" chart-labels="labels" chart-colors="colors">
     </canvas>
 
     <span ng-show="$scope.loading" class="glyphicon glyphicon-refresh glyphicon-spin"> Fetching Weather Data</span>
 
-    <button ng-show="!($scope.loading)" type="button" class="btn btn-primary" ng-click="showBarOrLine()">Click for {{barOrLine}} graph</button>
+    <button ng-show="!($scope.loading)" type="button" class="btn btn-primary" ng-click="showGraph()">Click for {{showGraphType}} graph</button>
 
   </div>
+
+
+
+
 
 </div>
 
